@@ -1,5 +1,5 @@
 import React from 'react'
-var zxcvbn = require('zxcvbn')
+var passCheck = require('zxcvbn')
 
 const Zxcvbn = () => {
   return (
@@ -7,8 +7,17 @@ const Zxcvbn = () => {
   )
 }
 
-var passwordData = zxcvbn('Tr0ub4dour&3')
+var passwordData = passCheck('ok')
 
-console.log(passwordData);
+const password = passwordData['password']
+const score = passwordData['score']
+const feedback = passwordData['feedback']
+const numGuesses = passwordData['guesses']
+const feedbackSuggestions = passwordData['feedback']['suggestions']
+
+const data = JSON.stringify(passwordData)
+
+console.log(data);
+console.log(passwordData['password']);
 
 export default Zxcvbn
