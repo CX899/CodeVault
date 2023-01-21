@@ -35,6 +35,11 @@ def generate_password(length):
     return password
 
 
+
+def _upper_conv(word):
+    return word[0].upper() + word[1:]
+
+
 def password_to_sentence(password):
     subject_letters = {'a': 'astronaut', 'b': 'bumblebee', 'c': 'canary', 'd': 'dinosaur', 'e': 'elephant', 'f': 'fish', 'g': 'goat', 
         'h' : 'horse', 'i': 'iguana', 'j': 'joker', 'k': 'koala', 'l': 'lion', 'm': 'mouse', 'n': 'ninja', 'o': 'owl', 
@@ -48,34 +53,48 @@ def password_to_sentence(password):
 
     symbol_letters = {'!': 'i', '$':'s', '@' : 'a'}
     
-    and_chr = {'&': 'and', ',' :',', '/': '/', ';' :';','.':'.'}
-
-    print(password)
-
-    
+    and_chr = {'&': 'and', ',' :',', '/': '/', ';' :';', '.':'.'}
+  
     reverse_acroynm = []
     state = 0
-    special_chr = False
-
     for letter in password:
-        if letter in symbol_letters: 
-            special_chr = True
-            letter = symbol_letters[letter]
-
+            
         if letter in and_chr:
             reverse_acroynm.append(letter)
             state = 0
+
+        elif letter in symbol_letters: 
+            temp_letter = symbol_letters[letter]
+            if state ==0 or state == 2:
+                word = subject_letters[temp_letter]
+            else:
+                word = verb_letters[temp_letter]
+                word = letter + word[1:]
+                reverse_acroynm.append(word)
+
         elif letter.isdigit():
             reverse_acroynm.append(letter)
+
         elif state == 0 or state == 2:
-            reverse_acroynm.append(subject_letters[letter.lower()])
+            word = subject_letters[letter.lower()]
+            if letter.isupper():
+                word = _upper_conv(word)
+            reverse_acroynm.append(word)
             state += 1
         elif state == 1:
-            reverse_acroynm.append(verb_letters[letter.lower()])
+            word = verb_letters[letter.lower()]
+            if letter.isupper():
+                word = _upper_conv(word)
+            reverse_acroynm.append(word)
             state += 1
+        
+        
         if state == 3:
             state = 0
-    
+
+
+
+
     return ' '.join(reverse_acroynm)
 
-print(password_to_sentence(generate_password(10)))
+
