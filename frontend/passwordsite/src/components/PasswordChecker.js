@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {LinearProgress} from '@mui/material';
-
+import Line from 'rc-progress';
 var checkFor = require('zxcvbn');
 
 const PasswordChecker = () => {
@@ -24,7 +24,8 @@ const PasswordChecker = () => {
         <div className='input__field__container'>
             <input onChange={(event) => setPassword(event)} type="text" id="password" className="input__field" placeholder='Password'>
             </input>
-            <LinearProgress variant='determinate' value={toInt(result['PasswordScore']['score'])*25}/>
+            <LinearProgress className='progress__bar' variant='determinate' value={toInt(result['PasswordScore']['score'])*25}/>
+
         </div>
 
         <div>

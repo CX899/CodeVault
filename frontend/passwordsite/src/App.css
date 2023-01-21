@@ -39,3 +39,8 @@
   background-color: rgb(36, 53, 120);
   background-color:rgb(229, 231, 240);
 }
+
+.progress__bar {
+  padding-left: 10%;
+  width: 40%;
+}
