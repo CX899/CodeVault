@@ -97,5 +97,4 @@ def password_to_sentence(password):
 
     return ' '.join(reverse_acroynm)
 
-print(password_to_sentence(generate_password(10)))
 
