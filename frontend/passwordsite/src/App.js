@@ -1,12 +1,12 @@
 import './App.css';
 
-import {Zxcvbn} from './components/paths';
+import {PasswordChecker} from './components/paths';
 
 function App() {
   return (
     <div>
       <p>Welcome to the site</p>
-      <Zxcvbn/>
+      <PasswordChecker/>
     </div>
   );
 }

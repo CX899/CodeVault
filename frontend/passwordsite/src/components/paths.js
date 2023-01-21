@@ -1,3 +1,3 @@
-import Zxcvbn from "./zxcvbn";
+import PasswordChecker from "./PasswordChecker";
 
-export {Zxcvbn};
+export {PasswordChecker};
