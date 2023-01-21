@@ -10,8 +10,10 @@ const PasswordChecker = () => {
 
 
   useEffect(() =>{
+
     document.body.style.backgroundColor = color
   }, [color])
+  
   //Change the score value
   const setPassword = (event) => {
     if (event.target.value !== '') {
@@ -31,10 +33,10 @@ const PasswordChecker = () => {
       setColor("yellow");
     }
     else if (result['PasswordScore']['score'] === 3) {
-      setColor("green");
+      setColor("blue");
     }
     else if (result['PasswordScore']['score'] === 4) {
-      setColor("blue");
+      setColor("green");
     }
   }
 
