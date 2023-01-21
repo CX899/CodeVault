@@ -1,9 +1,9 @@
 import React from 'react'
 
-const zxcvbn = () => {
+const Zxcvbn = () => {
   return (
-    <div>zxcvbn</div>
+    <div>Zxcvbn</div>
   )
 }
 
-export default zxcvbn
+export default Zxcvbn

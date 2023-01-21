@@ -1,3 +1,3 @@
-import zxcvbn from "./zxcvbn";
+import Zxcvbn from "./zxcvbn";
 
-export  zxcvbn;
+export {Zxcvbn} ;
