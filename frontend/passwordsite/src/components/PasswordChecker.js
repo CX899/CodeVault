@@ -1,11 +1,18 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {LinearProgress} from '@mui/material';
-import Line from 'rc-progress';
 var checkFor = require('zxcvbn');
 
 const PasswordChecker = () => {
-  const [result, setResult] = useState({ PasswordScore : {} });
 
+  //State Variables
+  const [result, setResult] = useState({ PasswordScore : {} });
+  const [color, setColor] = useState("blue");
+
+
+  useEffect(() =>{
+    document.body.style.backgroundColor = color
+  }, [color])
+  //Change the score value
   const setPassword = (event) => {
     if (event.target.value !== '') {
       let PasswordScore = checkFor(event.target.value);
@@ -14,11 +21,30 @@ const PasswordChecker = () => {
         PasswordScore
       }));
     }
+    if (result['PasswordScore']['score'] === 0) {
+      setColor("red");
+    }
+    else if (result['PasswordScore']['score'] === 1) {
+      setColor("orange");
+    }
+    else if (result['PasswordScore']['score'] === 2) {
+      setColor("yellow");
+    }
+    else if (result['PasswordScore']['score'] === 3) {
+      setColor("green");
+    }
+    else if (result['PasswordScore']['score'] === 4) {
+      setColor("blue");
+    }
   }
+
+  //Function to convert from Obj to Int
   const toInt = (value) => {
     return parseInt(JSON.stringify(value));
   }
 
+
+  //Main React Script
   return (
     <div className='input__field__wrapper'>
         <div className='input__field__container'>
@@ -31,7 +57,6 @@ const PasswordChecker = () => {
         <div>
             <pre className='input__text'>
               Password Score: {JSON.stringify(result['PasswordScore']['score'], null, 1)} <br/>
-              Number of guesses: {JSON.stringify(result['PasswordScore']['guesses'], null, 1)}
             </pre>
         </div>
      
