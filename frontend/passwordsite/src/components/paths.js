@@ -1,3 +1,5 @@
 import PasswordChecker from "./PasswordChecker";
 import Info from "./Info";
-export {PasswordChecker, Info};
+import PasswordGenerator from "./PasswordGenerator";
+
+export {PasswordChecker, Info, PasswordGenerator};

@@ -1,10 +1,11 @@
 import './App.css';
-import {PasswordChecker} from './components/paths';
+import {PasswordChecker, PasswordGenerator} from './components/paths';
 
 function App() {
   return (
     <div>
       <PasswordChecker/>
+      <PasswordGenerator/>
     </div>
   );
 }
