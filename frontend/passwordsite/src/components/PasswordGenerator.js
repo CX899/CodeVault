@@ -35,8 +35,9 @@ function generate_password(length) {
 }
 
 function _upperConv(word) {
-  return word[0].upper() + word.slice(1);
+  return word[0].toUpperCase() + word.slice(1);
 }
+
 function passwordToSentence(password) {
     let subjectLetters = {'a': 'astronaut', 'b': 'bumblebee', 'c': 'canary', 'd': 'dinosaur', 'e': 'elephant', 'f': 'fish', 'g': 'goat', 
         'h' : 'horse', 'i': 'iguana', 'j': 'joker', 'k': 'koala', 'l': 'lion', 'm': 'mouse', 'n': 'ninja', 'o': 'owl', 
@@ -94,4 +95,12 @@ function passwordToSentence(password) {
     return reverseAcronym.join(' ')
 }
 
-console.log(password_to_sentence(generate_password(10)));
+const PasswordGenerator = () => {
+  return (
+    <div className="password__container">
+        <button className="password__button" onClick={console.log(passwordToSentence(generate_password(10)))}></button>
+    </div>
+  )
+}
+
+export default PasswordGenerator
