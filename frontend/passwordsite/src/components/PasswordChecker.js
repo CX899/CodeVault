@@ -88,7 +88,6 @@ const PasswordChecker = () => {
           </motion.button>
 
           {modalOpen && <Modal passwordScore={result} modalOpen={modalOpen} handleClose={close}/>}
-          
         </div>
     </div>
   );
