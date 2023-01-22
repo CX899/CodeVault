@@ -73,11 +73,11 @@ const PasswordChecker = () => {
         <PasswordGenerator/>
       </div>
         <div className='input__field__container'>
-        <h1>Password Strenght Checker Tool</h1>
+        <h1>Password Strength Checker Tool</h1>
             <input onChange={(event) => setPassword(event)} type="text" id="password" className="input__field" placeholder='Password'>
             </input>
             <LinearProgress className='progress__bar' variant='determinate' value={toInt(result['PasswordScore']['score'])*25}/>
-            <div className="scoreContainer"><h3 className="pStrenght">{strenght}</h3><h3 className="sScore">score {strenghtScore}/5</h3></div>
+            <div className="scoreContainer"><h3 className="pStrenght">{strenght}</h3><h3 className="sScore">Score: {strenghtScore}/5</h3></div>
             <motion.button 
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.9 }}

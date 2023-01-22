@@ -7,6 +7,7 @@ function App() {
     <div>
       <PasswordChecker/>
       <PasswordGenerator/>
+      <BarChartVisualiser/>
 
     </div>
   );

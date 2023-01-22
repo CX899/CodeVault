@@ -234,10 +234,13 @@ button {
   display: flex;
   gap: 100px;
   justify-content: center;
-  margin-top: 8vh;
+  margin-bottom: 15vh;
 
-
+  
 }
 .chart-box{
-  width: 550px;
+  width: 450px;
+  background-color: rgba(0, 0, 0, 0.305);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
 }

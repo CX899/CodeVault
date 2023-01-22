@@ -3,6 +3,7 @@ import { Bar } from "react-chartjs-2"
 import { guesses } from '../data';
 import {Chart as ChartJS} from 'chart.js/auto'
 
+ChartJS.defaults.color = "#ffffff";
 
 
 function BarChart({chartData}) {
