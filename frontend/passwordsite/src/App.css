@@ -39,3 +39,60 @@
   background-color: rgb(36, 53, 120);
   background-color:rgb(229, 231, 240);
 }
+
+@import-normalize;
+
+:root {
+    --dark: #101315;
+    --light: #eeeeee;
+    --gradient: linear-gradient(10deg, #ffaa00, #ff6a00);
+    --gradient2: linear-gradient(15deg, #04ea00, #00d17d);
+    --gradient3: linear-gradient(15deg, #b648ff, #ef5dff);
+    font-size: 1rem;
+  }
+
+button {
+    width: auto;
+    height: 3rem;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 1.25px;
+    cursor: default;
+    font-family: "Montserrat", sans-serif;
+    background: var(--gradient);
+  }
+  
+  .backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000000e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+  }
+  
+  .modal {
+    width: clamp(50%, 700px, 90%);
+    height: min(50%, 300px);
+  
+    margin: auto;
+    padding: 0 2rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: scroll;
+  }
+  
+  .orange-gradient {
+    background: var(--gradient);
+  }
