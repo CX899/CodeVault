@@ -230,3 +230,14 @@ button {
   border-radius: 10px;
   margin: 20%;  
 }
+.bar-charts-container{
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  margin-top: 8vh;
+
+
+}
+.chart-box{
+  width: 550px;
+}
