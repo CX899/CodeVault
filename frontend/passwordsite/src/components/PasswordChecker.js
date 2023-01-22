@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import {LinearProgress} from '@mui/material';
 import { motion } from "framer-motion";
 import Modal from './Modal/index.js';
-
+import PasswordGenerator from './PasswordGenerator.js';
 var checkFor = require('zxcvbn');
 
 const PasswordChecker = () => {
@@ -11,7 +11,6 @@ const PasswordChecker = () => {
   const [result, setResult] = useState({ PasswordScore : {} });
   const [modalOpen, setModalOpen] = useState(false);
   const [strenght, setStrenght] = useState('');
-  const [length, setLength] = useState(8);
   const [strenghtScore, setstrenghtScore] = useState('0');
 
 
@@ -70,7 +69,8 @@ const PasswordChecker = () => {
     <div className='input__field__wrapper'>
       <div className='range__field__container'>
         <h1>Password Generator Tool</h1>
-        <input className = "slider" type="range" min="0" max="12" value={length} onChange={(e) => setLength(e.target.value)} />
+        
+        <PasswordGenerator/>
       </div>
         <div className='input__field__container'>
         <h1>Password Strenght Checker Tool</h1>
