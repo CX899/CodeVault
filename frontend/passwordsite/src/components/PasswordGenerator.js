@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import 'toolcool-range-slider';
-
-
+import Slider from '@mui/material/Slider';
 
 function generatePassword(length) {
+    console.log(length)
     let digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
     let lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     let upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -150,24 +149,45 @@ return reverseAcronym.join(" ");
 
 }
 
-const PasswordGenerator = () => {
+const PasswordGenerator = ({setGeneratedPassword}) => {
+
     const [genpass, setgenpass] = useState('')
     const [phrase, setPhrase] = useState('')
     const [passwordLength, setPasswordLength] = useState(12)
 
-    const setNewPassword = (event) => {
-        let password = generatePassword(10);
+    const setNewPassword = () => {
+        let password = generatePassword(passwordLength);
         let sentence = passwordToSentence(password);
         setgenpass(password);
         setPhrase(sentence);
     }
+
+    const setPL = (event) => {
+        let pLength = event.target.value;
+        setPasswordLength(pLength);
+    }
+
+    const setOthergenPass = () => {
+        setGeneratedPassword(genpass);
+    }
+
   return (
     <div>
-        <p className='genCreatedPassword'>Password: {genpass}</p>
+        <div className='genPContainer'><p className='genCreatedPassword'>Password: </p><p className='genCPhrase'>{genpass}</p></div>
         <div className='keyContainer'><p className='kPhrase'>Key Phrase: </p><p className='pPhrase'>{phrase}</p></div>
-        <div className="scoreContainer"><h3 className="pStrenght">Length of password</h3><h3 className="sScore">{passwordLength}</h3></div>
-        <toolcool-range-slider min="12" max="18"></toolcool-range-slider>
-        <button className="save-button" onClick={(event)=>setNewPassword(event)}></button>
+        <div className="rangeContainer"><h3 className="rLenght">Length of password: </h3><h3 className="rScore">{passwordLength}</h3></div>
+        <Slider
+        size="small"
+        min={12}
+        max={18}
+        defaultValue={14}
+        aria-label="Small"
+        onChange={setPL}
+         />
+        <div className='passwordButton'>
+            <button className="testPass" onClick={()=> setOthergenPass()}>Test Password</button>
+            <button className="generatePass" onClick={()=>setNewPassword()}>Generate Password</button>
+        </div>
     </div>
   )
 }
