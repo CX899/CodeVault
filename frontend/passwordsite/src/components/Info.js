@@ -131,7 +131,7 @@ You can use a password manager to generate a random password and avoid falling i
           <Typography sx={{ marginLeft: "5%" }}>
           Step 7 in creating a strong password is to use a password manager. A password manager is a tool that can generate, store, and manage complex passwords for you. It can also automatically fill in login information for you, so you don't have to remember all of your different passwords. <br></br><br></br>
 
-Password managers use encryption to protect your passwords, so even if someone gains access to the password manager, they will not be able to see your passwords in plain text. Some password managers also include features such as two-factor authentication to add an extra layer of security.   <br></br><br></br>
+Password managers use encryption to protect your passwords, so even if someone gains access to the password manager, they will not be able to see your passwords in plain text. Some password managers also include features such as two-factor authentication to add an extra layer of security.
           </Typography>
         </AccordionDetails>
       </Accordion>
