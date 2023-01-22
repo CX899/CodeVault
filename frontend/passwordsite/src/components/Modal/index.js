@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Backdrop from '../Backdrop';
+import Info from '../Info';
 
 const flip = {
     hidden: {
@@ -36,10 +37,7 @@ const Modal = ({handleClose, text, passwordScore}) => {
             animate='visible'
             exit='visible'
             >
-            <pre>
-                Info: {JSON.stringify(passwordScore, null, 1)}
-            </pre>
-            <button onClick={handleClose}>Close</button>
+            <Info/>
             </motion.div>
         </Backdrop>
     )
