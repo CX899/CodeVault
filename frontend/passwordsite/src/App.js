@@ -1,13 +1,12 @@
 import './App.css';
 import {PasswordChecker, PasswordGenerator} from './components/paths';
-import BarChartVisualiser from './components/BarChart/BarChartContainer';
+{/*import BarChartVisualiser from './components/BarChart/BarChartContainer';*/}
 
 function App() {
   return (
     <div>
       <PasswordChecker/>
-      <BarChartVisualiser/>
-
+      {/*<BarChartVisualiser/>*/}
     </div>
   );
 }
