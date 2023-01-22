@@ -69,8 +69,9 @@ def password_to_sentence(password):
                 word = subject_letters[temp_letter]
             else:
                 word = verb_letters[temp_letter]
-                word = letter + word[1:]
-                reverse_acroynm.append(word)
+            state += 1
+            word = letter + word[1:]
+            reverse_acroynm.append(word)
 
         elif letter.isdigit():
             reverse_acroynm.append(letter)
@@ -88,13 +89,10 @@ def password_to_sentence(password):
             reverse_acroynm.append(word)
             state += 1
         
-        
         if state == 3:
             state = 0
-
-
-
 
     return ' '.join(reverse_acroynm)
 
 
+print(password_to_sentence(generate_password(10)))
