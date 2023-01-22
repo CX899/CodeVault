@@ -36,8 +36,10 @@ const Modal = ({handleClose, text, passwordScore}) => {
             animate='visible'
             exit='visible'
             >
-                <pre>Info: {JSON.stringify(passwordScore, null, 1)}</pre>
-                <button onClick={handleClose}>Close</button>
+            <pre>
+                Info: {JSON.stringify(passwordScore, null, 1)}
+            </pre>
+            <button onClick={handleClose}>Close</button>
             </motion.div>
         </Backdrop>
     )
