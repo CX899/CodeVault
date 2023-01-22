@@ -89,6 +89,8 @@ struct LoginBoxView: View {
                     
                     showPassword.toggle()
                     
+                    
+                    
                 } label: {
                     
                     Image(systemName: showPassword ? "eye" : "eye.slash")

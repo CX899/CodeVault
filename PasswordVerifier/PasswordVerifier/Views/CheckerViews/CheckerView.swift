@@ -11,6 +11,7 @@ struct CheckerView: View {
     
     @EnvironmentObject var model:Model
     @AppStorage("ShowGraph") var showGraph = false
+    @AppStorage("ShowBiases") var showBiases = false
     @State var extraInfo = false
     
     var body: some View {
@@ -29,6 +30,17 @@ struct CheckerView: View {
                 Button {
                     
                     withAnimation(.easeIn) {
+                        self.showBiases.toggle()
+                    }
+                    
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .padding(.top, 8)
+                }
+                
+                Button {
+                    
+                    withAnimation(.easeIn) {
                         self.showGraph.toggle()
                     }
                     
@@ -39,7 +51,6 @@ struct CheckerView: View {
             }
             
             
-            Divider()
             
             
             TextFieldView()
@@ -55,17 +66,23 @@ struct CheckerView: View {
                 
                 HStack  {
                     
-                    
-                    Text("Time to Crack: ") + Text(timeFrame(model: model))
-                    
+                    Text("Time to Crack: ") + Text(timeFrame(model: model))                    
                     
                     Spacer()
                     
                     Text(getWordStrength(model: model))
                         .foregroundColor(getColour(model: model))
+                        .bold()
                     
                 }
+                
+
             }
+            
+            
+            
+            
+
             
             
         }

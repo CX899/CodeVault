@@ -14,6 +14,7 @@ struct ContentView: View {
     @AppStorage("ShowLogin") var showLogin = false
     @AppStorage("ShowSuggestions") var showSuggestions = false
     @AppStorage("ShowGraph") var showGraph = false
+    @AppStorage("ShowBiases") var showBiases = false
     @State var length : Float = 15
     @State var locked = false
     @State var page = 0
@@ -40,11 +41,11 @@ struct ContentView: View {
                     SuggestionView()
 
                 }
-                .frame(maxWidth: (showLogin || showSuggestions || showGraph) ? 500 : 700)
+                .frame(maxWidth: (showLogin || showSuggestions || showGraph || showBiases) ? 500 : 700)
                 
                 .animation(.easeInOut, value: model.textField)
                 
-                if showLogin || showSuggestions || showGraph {
+                if showLogin || showSuggestions || showGraph || showBiases {
                     
                     VStack {
                         ScrollView(showsIndicators: false) {
@@ -61,6 +62,10 @@ struct ContentView: View {
                                 ExtraSuggestionsView()
                             }
                             
+                            if showBiases {
+                                BiasesView()
+                            }
+                                
                         }
                         .frame(maxWidth: 500)
                         .frame(minHeight: 0, maxHeight: .infinity)
@@ -77,6 +82,7 @@ struct ContentView: View {
             .animation(.easeInOut, value: showLogin)
             .animation(.easeInOut, value: showSuggestions)
             .animation(.easeInOut, value: showGraph)
+            .animation(.easeInOut, value: showBiases)
             .offset(y: UIScreen.main.bounds.height / 9)
             
             

@@ -15,7 +15,7 @@ struct StrengthBarView: View {
     @AppStorage("ShowLogin") var showLogin = false
     @AppStorage("ShowSuggestions") var showSuggestions = false
     @AppStorage("ShowGraph") var showGraph = false
-    
+    @AppStorage("ShowBiases") var showBiases = false
     var body: some View {
         
         ZStack (alignment: .leading){
@@ -26,7 +26,7 @@ struct StrengthBarView: View {
             
             // Percent bar that goes up
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .frame(maxWidth: ((showLogin || showSuggestions || showGraph) ? 500 * CGFloat(model.passwordStrength) : 700 * CGFloat(model.passwordStrength)), maxHeight: 10)
+                .frame(maxWidth: ((showLogin || showSuggestions || showGraph || showBiases) ? 500 * CGFloat(model.passwordStrength) : 700 * CGFloat(model.passwordStrength)), maxHeight: 10)
                 .animation(.linear, value: model.passwordStrength)
                 .foregroundColor(getColour(model: model))
             

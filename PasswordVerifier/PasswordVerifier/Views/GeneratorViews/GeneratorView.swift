@@ -29,7 +29,6 @@ struct GeneratorView: View {
                 .font(.title)
                 .bold()
             
-            Divider()
             
             HStack {
                 Text("Acronym: ")
@@ -119,7 +118,6 @@ struct GeneratorView: View {
             
             Slider(value: $length, in: 12...18)
             
-            Divider()
             
             HStack {
                 

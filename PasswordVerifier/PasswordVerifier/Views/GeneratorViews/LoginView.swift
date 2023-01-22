@@ -34,7 +34,6 @@ struct LoginView: View {
                 .bold()
             
             
-            Divider()
             
             LoginBoxView()
                             
@@ -47,6 +46,12 @@ struct LoginView: View {
                     
                     saveLogin(username: authModel.usernameField, password: authModel.passwordField, website: authModel.websiteField)
                     
+                    withAnimation(.easeInOut) {
+                        authModel.usernameField = ""
+                        authModel.passwordField = ""
+                        authModel.websiteField = ""
+                    }
+
                 } label: {
                     Text("Save Password")
                         .foregroundColor(Color("BarColour"))

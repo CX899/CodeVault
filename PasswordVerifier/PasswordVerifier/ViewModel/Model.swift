@@ -7,6 +7,7 @@
 
 import Foundation
 import ZxcvbnSwift
+import Zxcvbn
 import SwiftUI
 
 class Model: ObservableObject {
@@ -15,6 +16,7 @@ class Model: ObservableObject {
     @Published var generatedPass = "Your Future Password"
     @Published var keyPhrase = "Your Future Key Phrase"
     @Published var generatedCrack = "0.0"
+    @Published var biases : [String] = []
     @Published var passwordStrength : Double = 0
     @Published var crackTime = "0.0"
     @Published var isCount = false
@@ -88,6 +90,24 @@ class Model: ObservableObject {
             else {
                 self.isCount = false
             }
+        }
+    }
+    
+    func accountBiases() {
+        let zxcvbn = Zxcvbn()
+        let score = zxcvbn.passwordStrength(self.textField, userInputs: self.biases)
+        
+        withAnimation(.easeInOut) {
+            if self.textField == "" {
+                self.passwordStrength = 0
+            }
+            else {
+                
+                self.passwordStrength = Double(round(10 * ((Double(score.value) + 1) * 0.2)) / 10)
+            }
+            
+            self.crackTime = score.crackTime
+
         }
     }
     

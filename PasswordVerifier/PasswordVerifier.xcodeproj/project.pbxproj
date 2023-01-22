@@ -31,6 +31,7 @@
 		F8721409297D3B3A00FB289A /* SuggestionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8721408297D3B3A00FB289A /* SuggestionItemView.swift */; };
 		F872140C297D6FAF00FB289A /* Zxcvbn in Frameworks */ = {isa = PBXBuildFile; productRef = F872140B297D6FAF00FB289A /* Zxcvbn */; };
 		F872140F297D720500FB289A /* ZxcvbnSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F872140E297D720500FB289A /* ZxcvbnSwift */; };
+		F8721411297D7D2800FB289A /* BiasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8721410297D7D2800FB289A /* BiasesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		F8721404297D244800FB289A /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		F8721406297D2C6700FB289A /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		F8721408297D3B3A00FB289A /* SuggestionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionItemView.swift; sourceTree = "<group>"; };
+		F8721410297D7D2800FB289A /* BiasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiasesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				F87213E2297C4DB900FB289A /* StrengthBarView.swift */,
 				F87213E0297C4AD900FB289A /* TextFieldView.swift */,
 				F8721406297D2C6700FB289A /* GraphView.swift */,
+				F8721410297D7D2800FB289A /* BiasesView.swift */,
 			);
 			path = CheckerViews;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				F87213E8297C6A3400FB289A /* CheckerView.swift in Sources */,
 				F87213FA297CFC6A00FB289A /* ExtraSuggestionsView.swift in Sources */,
 				F8721405297D244800FB289A /* AlertModel.swift in Sources */,
+				F8721411297D7D2800FB289A /* BiasesView.swift in Sources */,
 				F8721403297D223200FB289A /* GeneratePassword.swift in Sources */,
 				F8721409297D3B3A00FB289A /* SuggestionItemView.swift in Sources */,
 			);

@@ -33,9 +33,9 @@ struct ExtraSuggestionsView: View {
             
             Text("More Suggestions")
                 .padding(.vertical)
-                .padding(.leading)
                 .font(.title)
                 .bold()
+            
             
             
             SuggestionItemView(bool: $show1, title: "Use a combination of upper and lowercase letters, numbers, and special characters.", message: """
