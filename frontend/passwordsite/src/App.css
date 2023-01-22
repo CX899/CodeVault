@@ -96,3 +96,8 @@ button {
   .orange-gradient {
     background: var(--gradient);
   }
+
+.progress__bar {
+  padding-left: 10%;
+  width: 40%;
+}
