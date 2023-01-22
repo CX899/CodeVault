@@ -71,21 +71,12 @@ const PasswordChecker = () => {
   return (
     <div className='input__field__wrapper'>
         <div className='input__field__container'>
+        <h1>CodeVault</h1>
             <input onChange={(event) => setPassword(event)} type="text" id="password" className="input__field" placeholder='Password'>
             </input>
             <LinearProgress className='progress__bar' variant='determinate' value={toInt(result['PasswordScore']['score'])*25}/>
-
-        </div>
-
-        <div>
-            <pre className='input__text'>
-              Password Score: {JSON.stringify(result['PasswordScore']['score'], null, 1)} <br/>
-            </pre>
-        </div>
-
-        <div>
-          <motion.button 
-          whileHover={{ scale: 1.1 }}
+            <motion.button 
+          whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.9 }}
           className="save-button"
           onClick={() => (modalOpen ? close() : open())}
@@ -94,9 +85,8 @@ const PasswordChecker = () => {
           </motion.button>
 
           {modalOpen && <Modal passwordScore={result} modalOpen={modalOpen} handleClose={close}/>}
-
+          
         </div>
-     
     </div>
   );
 }
