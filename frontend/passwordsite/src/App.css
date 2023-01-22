@@ -13,6 +13,18 @@ body {
     flex-direction: column;
 }
 
+.genCreatedPassword{
+  margin-top: 0%;
+}
+
+.checkerTitle{
+  margin-top: 0%;
+}
+
+.rangeTitle{
+  margin-bottom: 0%;
+}
+
 .pStrenght{
     margin-top: 2%;
     display: flex;
@@ -24,6 +36,28 @@ body {
     position: relative;
     display: flex;
     align-items: flex-end;
+}
+
+.kPhrase{
+  margin-top: 2%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.pPhrase{
+  margin-top: 2%;
+  position: relative;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+
+}
+
+.keyContainer{
+  width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .scoreContainer{
@@ -47,7 +81,7 @@ body {
     text-align: left;
     align-items: left;
     padding: 5%;
-    padding-top: 0%;
+    padding-top: 2%;
 }
 
 .slider {
@@ -66,7 +100,6 @@ body {
     width: 70%;
     height: 40%;
     display: flex;
-    justify-content: center;
     text-align: left;
     align-items: left;
     padding: 5%;
@@ -75,7 +108,8 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
     color: #eeeeee;
-    padding-top: 0%;
+    padding-top: 2%;
+    padding-bottom: 0%;
 }
 
 .input__field {

@@ -3,6 +3,7 @@ import {LinearProgress} from '@mui/material';
 import { motion } from "framer-motion";
 import Modal from './Modal/index.js';
 import PasswordGenerator from './PasswordGenerator.js';
+
 var checkFor = require('zxcvbn');
 
 const PasswordChecker = () => {
@@ -68,12 +69,11 @@ const PasswordChecker = () => {
   return (
     <div className='input__field__wrapper'>
       <div className='range__field__container'>
-        <h1>Password Generator Tool</h1>
-        
+        <h1 className='rangeTitle'>Password Generator Tool</h1>
         <PasswordGenerator/>
       </div>
         <div className='input__field__container'>
-        <h1>Password Strength Checker Tool</h1>
+        <h1 className='checkerTitle'>Password Strength Checker Tool</h1>
             <input onChange={(event) => setPassword(event)} type="text" id="password" className="input__field" placeholder='Password'>
             </input>
             <LinearProgress className='progress__bar' variant='determinate' value={toInt(result['PasswordScore']['score'])*25}/>
@@ -89,9 +89,6 @@ const PasswordChecker = () => {
 
           {modalOpen && <Modal passwordScore={result} modalOpen={modalOpen} handleClose={close}/>}
           
-        </div>
-        <div>
-
         </div>
     </div>
   );

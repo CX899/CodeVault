@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import 'toolcool-range-slider';
+
 
 
 function generatePassword(length) {
@@ -136,6 +138,7 @@ return upperConv(reverseAcronym.join(" "));
 const PasswordGenerator = () => {
     const [genpass, setgenpass] = useState('')
     const [phrase, setPhrase] = useState('')
+    const [passwordLength, setPasswordLength] = useState(12)
 
     const setNewPassword = (event) => {
         let password = generatePassword(10);
@@ -145,8 +148,10 @@ const PasswordGenerator = () => {
     }
   return (
     <div>
-        <p className='input__field'>{genpass}</p>
-        <p className='input__field'>{phrase}</p>
+        <p className='genCreatedPassword'>Password: {genpass}</p>
+        <div className='keyContainer'><p className='kPhrase'>Key Phrase: </p><p className='pPhrase'>{phrase}</p></div>
+        <div className="scoreContainer"><h3 className="pStrenght">Length of password</h3><h3 className="sScore">{passwordLength}</h3></div>
+        <toolcool-range-slider min="12" max="18"></toolcool-range-slider>
         <button className="save-button" onClick={(event)=>setNewPassword(event)}></button>
     </div>
   )
