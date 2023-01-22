@@ -108,28 +108,43 @@ let andChr = {
 
 var reverseAcronym = [];
 var state = 0;
+let word;
 
 for (let letter of password) {
     
     if (Object.keys(andChr).includes(letter)) {
         reverseAcronym.push(andChr[letter]);
+        state = 0;
     } else if (symbolLetters.hasOwnProperty(letter)) {
         reverseAcronym.push(symbolLetters[letter]);
+    } else if(!isNaN(letter)){
+        reverseAcronym.push(letter)
     } else if (state === 0) {
-        reverseAcronym.push(subjectLetters[letter]);
+        word = subjectLetters[letter.toLowerCase()];
+        if (letter == letter.toUpperCase()) {
+            word = upperConv(word)
+        }
+        reverseAcronym.push(word);
         state = 1;
     } else if (state === 1) {
-        reverseAcronym.push(verbLetters[letter]);
+        word = verbLetters[letter.toLowerCase()];
+        if (letter == letter.toUpperCase()) {
+            word = upperConv(word)
+        }
+        reverseAcronym.push(word);
         state = 2;
     } else if (state === 2) {
-        reverseAcronym.push(verbLetters[letter]);
+        word = subjectLetters[letter.toLowerCase()];
+        if (letter == letter.toUpperCase()) {
+            word = upperConv(word)
+        }
+        reverseAcronym.push(word);
         state = 3;
-    } else if (state === 3) {
-        reverseAcronym.push(subjectLetters[letter]);
+    } if (state === 3) {
         state = 0;
     }
 }
-return upperConv(reverseAcronym.join(" "));
+return reverseAcronym.join(" ");
 
 }
 
