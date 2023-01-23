@@ -4,6 +4,10 @@
 
 This is CodeVault, our ConUHacks React web app and offline SwiftUI App with all the latest password generation and verifier tools.
 
-https://youtu.be/P-juRpOgGzE
+
+
+https://user-images.githubusercontent.com/77747704/213970259-7c08a238-ed0e-42e1-a86d-d8df1afa116c.mp4
+
+
 
 <img width="910" alt="Screenshot 2023-01-22 at 9 53 43 AM" src="https://user-images.githubusercontent.com/77747704/213924499-7a9ae85a-5aa2-4103-a29f-d1ef09fdebba.png">
